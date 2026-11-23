@@ -1,0 +1,57 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<article>
+   {%include "partials/theme-switch.html"%}
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="https://fdnd.directus.app/assets/ee9e43f9-4b86-4969-bbf9-b36a223ef9ca?format=avif&height=550" />
+      <source type="image/webp" srcset="https://fdnd.directus.app/assets/ee9e43f9-4b86-4969-bbf9-b36a223ef9ca?format=webp&height=550" />
+      <img src="https://fdnd.directus.app/assets/ee9e43f9-4b86-4969-bbf9-b36a223ef9ca?height=550" alt="Profielfoto van {{card.name}}" fetchpriority="high"
+        width="250" height="250" />
+    </picture>
+  </figure>
+
+  <h1>{{ card.name }}</h1>
+  <h2>{{ card.job }}</h2>
+  <ul>
+    <li>
+      {%include "icons/phone.svg"%}
+      {{ card.phone }}
+    </li>
+    <li>
+      {%include "icons/email.svg"%}
+      {{card.email}}
+    </li>
+    <li>
+      <a href="{{card.portfolio.link}}" target="_blank">
+        {%include "icons/email.svg"%}
+        {{card.portfolio.name}}
+      </a>
+    </li>
+    <li>
+      <a href="{{card.linkedin.link}}" target="_blank">
+        {%include "icons/linkedin.svg"%}
+        {{card.linkedin.name}}
+      </a>
+    </li>
+    <li>
+      <a href="{{card.github.link}}" target="_blank">
+        {%include "icons/github.svg"%}
+        {{card.github.name}}
+      </a>
+    </li>
+  </ul>
+
+  <div class="hover-wrapper">
+    <div class="hover top-left"></div>
+    <div class="hover top-center"></div>
+    <div class="hover top-right"></div>
+    <div class="hover middle-left"></div>
+    <div class="hover middle-center"></div>
+    <div class="hover middle-right"></div>
+    <div class="hover bottom-left"></div>
+    <div class="hover bottom-center"></div>
+    <div class="hover bottom-right"></div>
+  </div>
+</article>
+{% endblock %}
